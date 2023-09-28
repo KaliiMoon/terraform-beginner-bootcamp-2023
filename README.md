@@ -108,7 +108,7 @@ HELLO='world'
 echo $HELLO
 ```
 
-## Pringting Vars
+## Printing Vars
 
 We can print an env var using echo eg. `echo $HELLO`
 
