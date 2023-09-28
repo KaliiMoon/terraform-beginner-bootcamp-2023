@@ -108,7 +108,7 @@ HELLO='world'
 echo $HELLO
 ```
 
-## Pringting Vars
+## Printing Vars
 
 We can print an env var using echo eg. `echo $HELLO`
 
@@ -131,4 +131,27 @@ All future workspaces launched will set the env vars for all bash terminals open
 You can also set env vars in the `.gitpod.yml` but this can only contain non sensitive env vars.
 
 
+### AWS CLI Installation
 
+AWS CLI is installed for the project via the bash script [`./bin/install_aws_cli`](./bin/install_aws_cli)
+
+[AWS CLI Installation](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
+[AWS CLI Env Vars](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-envvars.html)
+
+Check if AWS credentials is configured correctly by running the follwing AWS CLI command:
+```sh
+aws sts get-caller-identity
+```
+
+
+If successful you should see a json payload return that looks like this:
+
+```json
+{
+    "UserId": "AKDAXCFMEPAPIUYC7YK5J",
+    "Account": "123456789125",
+    "Arn": "arn:aws:iam::123456789125:user/KaliMoon21"
+}
+```
+
+Need to generate AWS CLI credits from IAM User in order to use AWS CLI.
