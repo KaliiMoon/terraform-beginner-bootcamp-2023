@@ -157,9 +157,9 @@ If successful you should see a json payload return that looks like this:
 Need to generate AWS CLI credits from IAM User in order to use AWS CLI.
 
 
-##Terraform Basics
+## #Terraform Basics
 
-### Terraform Registry
+#### Terraform Registry
 
 Terraform sources their providers and modules from the Terraform registry located at [registry.terraform.io](https://registry.terraform.io/)
 
@@ -168,7 +168,7 @@ Terraform sources their providers and modules from the Terraform registry locate
 
 [Random Terraform Provider](https://registry.terraform.io/providers/hashicorp/random)
 
-### Terraform Console
+#### Terraform Console
 
 List of all Terraform commands by simply typing `terraform`
 
@@ -213,6 +213,12 @@ If you lose this file, you lose knowing the state or your infrastucture.
 ### Terraform Directory
 
 `.terraform` directory contains binaries of terraform providers.
+
+#### Terraform Destroy
+
+`terraform destroy`
+
+This will destroy resources.
 
 
 
