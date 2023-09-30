@@ -1,4 +1,19 @@
 terraform {
+    #backend "remote" {
+    #  hostname = "app.terraform.io"
+    #  organization = "terraformbootcamp2023km"
+
+    #  workspaces {
+    #    name = "kali-terra-house"
+    #  }
+    #}
+ cloud {
+    organization = "terraformbootcamp2023km"
+    workspaces {
+      name = "kali-terra-house"
+    }
+  }
+
   required_providers {
     random = {
       source = "hashicorp/random"
