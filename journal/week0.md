@@ -9,7 +9,7 @@
     + [Shebang](#shebang)
   * [Executions Considerations](#executions-considerations)
     + [Linux Permissions Considerations](#linux-permissions-considerations)
-    + [Github Lifecycle (Before, Init, Command)](#github-lifecycle--before--init--command-)
+    + [Gitpod Lifecycle (Before, Init, Command)](#github-lifecycle--before--init--command-)
     + [Working Env Vars](#working-env-vars)
       - [Setting and Unsetting Env Vars](#setting-and-unsetting-env-vars)
   * [Printing Vars](#printing-vars)
