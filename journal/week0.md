@@ -103,7 +103,7 @@ chmod 744 ./bin/install_terraform_cli
 
 https://en.wikipedia.org/wiki/Chmod
 
-### Github Lifecycle (Before, Init, Command)
+### Gitpod Lifecycle (Before, Init, Command)
 
 Be careful using Init becuase it will not rerun if we restart an existing workspace.
 
