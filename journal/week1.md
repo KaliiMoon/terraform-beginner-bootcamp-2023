@@ -1,1 +1,50 @@
 # Terraform-beginner-bootcamp-2023 - Week 1
+
+## Root Module Structure
+
+Root Module structure:
+
+- PROJECT_ROOT
+  
+  - main.tf - everything else
+  - variables.tf - stores the structure of input variables
+  - providers.tf
+  - outputs.tf - stores our outputs
+  - terraform.tfvars - data of variables we want to load into terraform project
+  - README.md - required for root modules
+
+[Standard Structure Module](https://developer.hashicorp.com/terraform/language/modules/develop/structure)
+
+## Terraform and Input Variables
+
+
+## Terraform Cloud Variables
+
+In terraform we can set two kinds of variables:
+  - Environment Variables - set in your bash terminal eg. AWS credentials
+  - Terraform Variables - set in your tfvars files
+
+  Set Terraform Cloud variables sensentive 
+
+  ### Loading Terraform Variables
+
+  [Terraform Input Variables](https://developer.hashicorp.com/terraform/language/values/variables)
+
+  Use `-var` flag to set an input variable or override a variable in the tfvars file eg. `terraform -var user_uuid="my_user_id"`
+
+  ### var file flag
+
+  - TODO: document this flag
+
+  ### terraform.tfvars
+
+  Set this default file to laod in terraform variables in blunk
+
+  ### auto.tfvars
+
+  - TODO: document this functionality for terraform cloud
+
+  ### order of terraform variables
+
+  - TODO: document which terraform variables take presedence
+
