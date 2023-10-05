@@ -48,3 +48,23 @@ In terraform we can set two kinds of variables:
 
   - TODO: document which terraform variables take presedence
 
+## What happens if we lose our state file?
+
+You will have to tear down all your cloud infrastruture manually.
+
+You can use terraform import but it won't work for all cloud resources. You need to check the terraform providers documentation for which resources support import.
+
+### Fix missing Resources with Terraform Import
+
+`terraform import aws_s3_bucket.bucket bucket-name`
+
+[Terraform Import](https://developer.hashicorp.com/terraform/cli/import)
+[AWS S3 Bucket Import](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/string)
+
+## Dealing With Configuration Drift
+
+### Fix manual Configuration
+
+If someone delets or modifies cloud resources manually through ClickOps.
+
+Run Terraform Plan with attemple to put infrastructure into the expected state, fixing configuration drift
