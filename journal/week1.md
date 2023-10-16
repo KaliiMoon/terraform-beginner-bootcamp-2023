@@ -118,3 +118,11 @@ In Terraform there is a special variable called `path` that allows us to referen
 
 [Special Path Variable](https://developer.hashicorp.com/terraform/language/expressions/references)
 
+## Working with JSON
+
+Use the jsonencode to create the json policy inline in the hcl.
+
+```tf
+> jsonencode({"hellow"="world"})
+{"hello":"world"}
+```
