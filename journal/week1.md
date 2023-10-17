@@ -126,3 +126,8 @@ Use the jsonencode to create the json policy inline in the hcl.
 > jsonencode({"hellow"="world"})
 {"hello":"world"}
 ```
+
+### Changing Lifecycle Resources
+
+[Meta Arguments Lifecycle](https://developer.hashicorp.com/terraform/language/meta-arguments/lifecycle)
+
