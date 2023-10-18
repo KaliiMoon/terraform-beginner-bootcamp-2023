@@ -123,7 +123,7 @@ In Terraform there is a special variable called `path` that allows us to referen
 Use the jsonencode to create the json policy inline in the hcl.
 
 ```tf
-> jsonencode({"hellow"="world"})
+> jsonencode({"hello"="world"})
 {"hello":"world"}
 ```
 
@@ -131,3 +131,4 @@ Use the jsonencode to create the json policy inline in the hcl.
 
 [Meta Arguments Lifecycle](https://developer.hashicorp.com/terraform/language/meta-arguments/lifecycle)
 
+## Provisioners
