@@ -132,3 +132,8 @@ Use the jsonencode to create the json policy inline in the hcl.
 [Meta Arguments Lifecycle](https://developer.hashicorp.com/terraform/language/meta-arguments/lifecycle)
 
 ## Provisioners
+
+## For Each Expressions
+
+[For Each](https://developer.hashicorp.com/terraform/language/meta-arguments/for_each)
+
