@@ -3,22 +3,50 @@ require 'json'
 require 'pry'
 require 'active_model'
 
+# We will mock having a state or database for this development
+# by setting a global variable. you would never use a global variable
+# in production server
 $home = {}
 
+# This is a ruby class that includes validations from ActiveRecord.
+# Represents Home resources as a ruby object
 class Home
+  # ActiveModel is Ruby on Rails
+  # use as an ORM. It has a module within
+  # ActiveModel provides validation
+  # production terratowns server is rails and uses
+  # very similar and in most cases identical validation
+  # https://guides.rubyonrails.org/active_model_basics.html
   include ActiveModel::Validations
+
+  # create some virtual attributes to store on this project
+  # this will set a getter and setter
+  # eg.
+  # home = new Home()
+  # home.town = 'hello' # setter
+  # home.town() # getter
   attr_accessor :town, :name, :description, :domain_name, :content_version
 
-  validates :town, presence: true
+  validates :town, presence: true, inclusion: { in: [
+    'melomaniac-mansion',
+    'cooker-cover',
+    'video-valley',
+    'the-nomad-pad',
+    'gamers-grotto'
+  ] }
   validates :name, presence: true
   validates :description, presence: true
   validates :domain_name, 
     format: { with: /\.cloudfront\.net\z/, message: "domain must be from .cloudfront.net" }
     # uniqueness: true, 
 
+  # content version has to be an integer
+  # make sure its and incremental version in the controller
   validates :content_version, numericality: { only_integer: true }
 end
 
+# We are extending a clas from Sinatra::Base to
+# turn this generic class to utilize the sinatra web-framework
 class TerraTownsMockServer < Sinatra::Base
 
   def error code, message
@@ -48,7 +76,9 @@ class TerraTownsMockServer < Sinatra::Base
   end
 
   def find_user_by_bearer_token
+    # https://swagger.io/docs/specification/authentication/bearer-authentication
     auth_header = request.env["HTTP_AUTHORIZATION"]
+    # check if the authorization header exists?
     if auth_header.nil? || !auth_header.start_with?("Bearer ")
       error 401, "a1000 Failed to authenicate, bearer token invalid and/or teacherseat_user_uuid invalid"
     end
@@ -79,13 +109,16 @@ class TerraTownsMockServer < Sinatra::Base
       halt 422, "Malformed JSON"
     end
 
-    # Validate payload data
+    # assign the payload to variables
+    # to make easier to work with the code
     name = payload["name"]
     description = payload["description"]
     domain_name = payload["domain_name"]
     content_version = payload["content_version"]
     town = payload["town"]
 
+    # printing the variables out to console to make it easier
+    # to see or debug what we have inputed into this endpoint
     puts "name #{name}"
     puts "description #{description}"
     puts "domain_name #{domain_name}"
