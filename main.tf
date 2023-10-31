@@ -13,12 +13,12 @@ terraform {
     #    name = "kali-terra-house"
     #   }
     #}
-    #cloud {
-    # organization = "terraformbootcamp2023km"
-    # workspaces {
-    #   name = "kali-terra-house"
-    # }
-    #}
+    cloud {
+     organization = "terraformbootcamp2023km"
+     workspaces {
+       name = "kali-terra-house"
+     }
+    }
 
 }
 
